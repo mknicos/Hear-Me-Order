@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'coffee-rails', '~> 4.0.0'
+gem 'devise'
 gem 'haml-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
@@ -32,4 +33,3 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
