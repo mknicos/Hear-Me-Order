@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: hear_me_order_production
-  username: hear_me_order
-  password: <%= ENV['HEAR_ME_ORDER_DATABASE_PASSWORD'] %>

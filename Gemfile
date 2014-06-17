@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'i18n', '!= 0.6.10'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'coffee-rails', '~> 4.0.0'
