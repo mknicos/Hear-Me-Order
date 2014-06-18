@@ -1,0 +1,17 @@
+
+h1 {
+  color: red;
+}
+
+#register_form {
+  @extend .small-10;
+  @extend .small-centered;
+  @extend .columns;
+  @extend .medium-4;
+  @extend .medium-centered;
+  @extend .columns;
+}
+
+.btn {
+  @extend .button;
+}
