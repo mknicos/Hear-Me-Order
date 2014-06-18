@@ -11,6 +11,13 @@ feature "User signs up" do
     fill_in "Password confirmation", with: "password"
     click_button "Sign up"
     page.should have_content "Welcome to Hear Me Order!"
+
+    click_link "User Sign Out"
+    click_link "User Sign In"
+    fill_in "Email", with: "matt@example.com"
+    fill_in "Password", with: "password"
+    click_button "Sign in"
+    page.should have_content "You have signed in successfully"
   end
 
   scenario "failed signup because duplicate email" do
