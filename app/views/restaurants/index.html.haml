@@ -1,6 +1,6 @@
 %h1 Restaurant Index
 - @restaurants.each do |restaurant|
-  %h3= restaurant.name
+  %h3= link_to restaurant.name, restaurant_path(restaurant)
   %ul
     %li= restaurant.phone
     %li= restaurant.address

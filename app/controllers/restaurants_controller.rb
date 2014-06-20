@@ -1,8 +1,7 @@
 class RestaurantsController < ApplicationController
-  def join
-  end
 
-  def select
+  def show
+    @restaurant = Restaurant.find(params[:id])
   end
 
   def create
