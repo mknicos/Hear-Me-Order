@@ -3,6 +3,8 @@ class Restaurant < ActiveRecord::Base
 
   validates :phone, uniqueness: true
 
+  validates :address, uniqueness: true
+
   validates :name,
     presence: true,
     format: { with: /\A[a-zA-Z\s\']+\z/,

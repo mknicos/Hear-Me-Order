@@ -17,7 +17,7 @@ feature "Add A Restaurant" do
     fill_in "Address", with: "1234 Main Street"
     fill_in "Phone", with: "1234567890"
     click_button "Add Restaurant"
-    page.should have_content "Burger Shack has been added"
+    page.should have_content "Restaurant Added"
   end
 
   scenario "failed signup because duplicate address" do
@@ -37,7 +37,7 @@ feature "Add A Restaurant" do
     fill_in "Address", with: "1234 Main Street"
     fill_in "Phone", with: "1234567890"
     click_button "Add Restaurant"
-    page.should have_content "The Restaurant could not be added."
+    page.should have_content "Burger Shack couldn't be added"
     page.should have_error("has already been taken", on: "Address")
   end
 end

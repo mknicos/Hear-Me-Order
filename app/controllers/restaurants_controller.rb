@@ -10,7 +10,7 @@ class RestaurantsController < ApplicationController
     if @restaurant.save
       redirect_to restaurants_path, notice: "Restaurant Added"
     else
-      flash[:alert] = "The restaurant couldn't be added"
+      flash[:alert] = "#{@restaurant[:name]} couldn't be added"
       render :new
     end
   end
