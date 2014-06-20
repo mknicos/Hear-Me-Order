@@ -8,7 +8,9 @@ class RestaurantsController < ApplicationController
   def create
     @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.save
-      redirect_to restaurants_path, notice: "Restaurant Added"
+      @employee = Employee.find(current_employee)
+      @employee.update_attributes(:restaurant_id => @restaurant[:id])
+      redirect_to restaurants_path, notice: "Restaurant Added and #{@employee[:first_name]} is a member"
     else
       flash[:alert] = "#{@restaurant[:name]} couldn't be added"
       render :new

@@ -17,7 +17,7 @@ feature "Add A Restaurant" do
     fill_in "Address", with: "1234 Main Street"
     fill_in "Phone", with: "1234567890"
     click_button "Add Restaurant"
-    page.should have_content "Restaurant Added"
+    page.should have_content "Restaurant Added and matt is a member"
   end
 
   scenario "failed signup because duplicate address" do

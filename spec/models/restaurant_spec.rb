@@ -3,7 +3,6 @@ require 'spec_helper'
 describe Restaurant do
   it {should validate_uniqueness_of :phone }
 
-
   describe 'name' do
     #allow spaces and apostrophes, but not other symbols
       it { should allow_value('McDonalds').for(:name)}

@@ -1,5 +1,5 @@
 class Employee < ActiveRecord::Base
-  has_one :restaurant
+  belongs_to :restaurant
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
@@ -18,8 +18,8 @@ class Employee < ActiveRecord::Base
     format: { with: /\A[a-zA-Z]+\z/,
       message: "Your last name can only have letters"}
 
-
   def create_or_join
     render :create_or_join
   end
+
 end
