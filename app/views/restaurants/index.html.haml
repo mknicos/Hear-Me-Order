@@ -1,0 +1,6 @@
+%h1 Restaurant Index
+- @restaurants.each do |restaurant|
+  %h3= restaurant.name
+  %ul
+    %li= restaurant.phone
+    %li= restaurant.address

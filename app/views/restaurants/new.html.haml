@@ -1,0 +1,8 @@
+%h2 Create A Restaurant
+.row
+  #register_form
+    = simple_form_for @restaurant, url: restaurants_path do |f|
+      = f.input :name, autofocus: true
+      = f.input :address
+      = f.input :phone, type: :telephone_field
+      = f.button :submit, "Sign up"
