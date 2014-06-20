@@ -17,4 +17,9 @@ class Employee < ActiveRecord::Base
     presence: true,
     format: { with: /\A[a-zA-Z]+\z/,
       message: "Your last name can only have letters"}
+
+
+  def create_or_join
+    render :create_or_join
+  end
 end

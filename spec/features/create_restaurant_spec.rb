@@ -12,13 +12,12 @@ feature "Add A Restaurant" do
     click_button "Sign up"
     page.should have_content "Welcome to Hear Me Order!"
 
-    click_button "Add A Restaurant"
+    click_link "Add A Restaurant"
     fill_in "Name", with: "Burger Shack"
     fill_in "Address", with: "1234 Main Street"
     fill_in "Phone", with: "1234567890"
     click_button "Add Restaurant"
     page.should have_content "Burger Shack has been added"
-
   end
 
   scenario "failed signup because duplicate address" do
@@ -31,9 +30,9 @@ feature "Add A Restaurant" do
     fill_in "Password", with: "password"
     fill_in "Password confirmation", with: "password"
     click_button "Sign up"
-    page.should_not have_content "Welcome to Hear Me Order!"
+    page.should have_content "Welcome to Hear Me Order!"
 
-    click_button "Add A Restaurant"
+    click_link "Add A Restaurant"
     fill_in "Name", with: "Burger Shack"
     fill_in "Address", with: "1234 Main Street"
     fill_in "Phone", with: "1234567890"
@@ -41,3 +40,4 @@ feature "Add A Restaurant" do
     page.should have_content "The Restaurant could not be added."
     page.should have_error("has already been taken", on: "Address")
   end
+end

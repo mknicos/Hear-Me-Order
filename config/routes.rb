@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :restaurants, except: [:destroy]
 
   devise_for :employees
+  get '/employees/create_or_join', to: 'employees#create_or_join'
+
   devise_for :users
   root to: "home#index"
 
