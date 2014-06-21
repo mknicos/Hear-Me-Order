@@ -23,7 +23,6 @@ feature "Add A Restaurant" do
   scenario "failed signup because duplicate address" do
     Restaurant.create(name: "Shake Shack", phone: "1112223333", address: "1234 Main Street")
     visit restaurants_path
-    save_and_open_page
     visit '/'
     click_link "Register As Employee"
     fill_in "Email", with: "matt@example.com"
@@ -39,7 +38,6 @@ feature "Add A Restaurant" do
     fill_in "Address", with: "1234 Main Street"
     fill_in "Phone", with: "1234567890"
     click_button "Add Restaurant"
-    save_and_open_page
     page.should have_content "Burger Shack couldn't be added"
     page.should have_error("has already been taken", on: "Address")
   end
