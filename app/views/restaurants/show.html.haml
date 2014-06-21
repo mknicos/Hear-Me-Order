@@ -1,6 +1,8 @@
 %h1= @restaurant.name
 %h3= @restaurant.address
 %h3= @restaurant.phone
+%h4= @restaurant.latitude
+%h4= @restaurant.longitude
 %ul
   - @restaurant.employees.each do |employee|
     %li= "#{employee[:last_name]}, #{employee[:first_name]}"
