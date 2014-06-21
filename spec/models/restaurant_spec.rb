@@ -19,4 +19,11 @@ describe Restaurant do
       statue.longitude.should == -74.045138
     end
   end
+
+  describe 'google static image' do
+    it "should build the google static image url" do
+      restaurant = Restaurant.create(name: "Liberty", phone: "1112223333", address:"Liberty Island, New York, NY 10004")
+      restaurant.static_map_url.should == "http://maps.googleapis.com/maps/api/staticmap?size=400x400&markers=color:black|40.689758,-74.045138"
+    end
+  end
 end

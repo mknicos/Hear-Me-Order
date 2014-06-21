@@ -16,4 +16,9 @@ class Restaurant < ActiveRecord::Base
 
   geocoded_by :address
   after_validation :geocode
+
+  def static_map_url
+    "http://maps.googleapis.com/maps/api/staticmap?size=400x400&markers=color:black|#{self.latitude},#{self.longitude}"
+  end
+
 end

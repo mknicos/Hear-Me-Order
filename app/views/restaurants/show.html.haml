@@ -6,3 +6,4 @@
 %ul
   - @restaurant.employees.each do |employee|
     %li= "#{employee[:last_name]}, #{employee[:first_name]}"
+= image_tag @restaurant.static_map_url
