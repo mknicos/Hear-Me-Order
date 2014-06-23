@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :restaurants, except: [:destroy]
+  resources :restaurants do
+    resources :items
+  end
 
   devise_for :employees, :controllers => { :registrations => "registrations" }
   get '/employees/create_or_join', to: 'employees#create_or_join'
