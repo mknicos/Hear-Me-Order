@@ -1,5 +1,6 @@
 class Restaurant < ActiveRecord::Base
   has_many :employees
+  has_many :items
 
   validates :phone,
     uniqueness: true,

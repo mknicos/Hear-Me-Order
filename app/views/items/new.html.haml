@@ -1,0 +1,9 @@
+%h2 Add an Item
+.row
+  #register_form
+    = simple_form_for [@restaurant, @item] do |f|
+      = f.input :name, autofocus: true
+      = f.input :price
+      = f.input :description
+      = f.hidden_field :restaurant_id, value: @restaurant.id
+      = f.button :submit, "Add Menu Item"

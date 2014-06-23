@@ -3,7 +3,14 @@
 %h3= @restaurant.phone
 %h4= @restaurant.latitude
 %h4= @restaurant.longitude
+= image_tag @restaurant.static_map_url
+
 %ul
   - @restaurant.employees.each do |employee|
     %li= "#{employee[:last_name]}, #{employee[:first_name]}"
-= image_tag @restaurant.static_map_url
+
+%h2 Menu
+= button_to "Add A Menu Item", new_restaurant_item_path(@restaurant), :method => "get", class: "button"
+%ul
+  - @restaurant.items.each do |item|
+    %li= "#{item.name} #{item.price}"
