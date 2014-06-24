@@ -33,7 +33,7 @@ feature "Add A Menu Item" do
     page.should have_content "Burger Shack"
   end
 
-  scenario "happy path" do
+  scenario "Item not created due to invalid item entered" do
     visit '/'
     click_link "Register As Employee"
     fill_in "Email", with: "matt@example.com"
@@ -59,11 +59,8 @@ feature "Add A Menu Item" do
     click_button "Add A Menu Item"
     fill_in "Name", with: "Cheeseburger"
     fill_in "Price", with: -9.85
-    fill_in "Description", with: "Half pound of juicy goodness"
+    fill_in "Description", with: "Half pound of goodness"
     click_button "Add Menu Item"
     page.should have_content "Cheeseburger couldn't be added"
-    #FORM not auto populating due to redirect instead of
-    #render on a failed menu item add
-    #page.should have_content "Half pound of juicy goodness"
   end
 end

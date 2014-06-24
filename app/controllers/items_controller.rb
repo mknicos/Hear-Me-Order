@@ -7,14 +7,13 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    @restaurant = Restaurant.find(@item.restaurant_id)
     if @item.save
-      redirect_to restaurant_path(@item.restaurant),
+      redirect_to restaurant_path(@restaurant),
         notice: "#{@item.name} added"
     else
-      #render 'restaurants/#{@item.restaurant_id}/items/new'
-      #render :new, :locals => {@item => @item, @restaurant => @item.restaurant}
-      redirect_to new_restaurant_item_path(@item.restaurant)
       flash[:alert] = "#{@item[:name]} couldn't be added"
+      render :new
     end
 
   end
