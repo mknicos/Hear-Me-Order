@@ -13,7 +13,7 @@ feature "Employee signs up" do
     page.should have_content "Welcome to Hear Me Order!"
 
     visit '/'
-    click_link "Employee Sign Out"
+    click_link "Sign Out"
     click_link "Employee Sign In"
     fill_in "Email", with: "matt@example.com"
     fill_in "Password", with: "password"

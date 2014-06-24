@@ -21,7 +21,16 @@ class RestaurantsController < ApplicationController
   end
 
   def index
-    @restaurants = Restaurant.all
+    if current_user
+      @restaurants = Restaurant.all
+      render :index
+    elsif current_employee
+      @restaurant = Restaurant.find(current_employee.restaurant)
+      redirect_to restaurant_path(@restaurant)
+    else
+      redirect_to root_path, alert: "You must sign in to view that page"
+    end
+
   end
 
   private
