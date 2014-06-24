@@ -1,5 +1,10 @@
-- @restaurants.each do |restaurant|
-  %h3= link_to restaurant.name, restaurant_path(restaurant)
-  %ul
-    %li= restaurant.phone
-    %li= restaurant.address
+#map-canvas
+%ul.restaurants
+  - @restaurants.each do |restaurant|
+    %li.restaurant{data: {latitude: restaurant.latitude, longitude: restaurant.longitude, name: restaurant.name, id: restaurant.id}}
+      %h3= link_to restaurant.name, restaurant_path(restaurant)
+      %ul
+        %li= number_to_phone(restaurant.phone)
+        %li= restaurant.address
+
+= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyD-2wn8zNBeDOrvZe6jxSrQI34CAMqEcJI"
