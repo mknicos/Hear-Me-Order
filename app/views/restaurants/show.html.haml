@@ -1,6 +1,6 @@
 %h1= @restaurant.name
 %h3= @restaurant.address
-%h3= @restaurant.phone
+%h3= number_to_phone(@restaurant.phone.to_i)
 %h4= @restaurant.latitude
 %h4= @restaurant.longitude
 = image_tag @restaurant.static_map_url
@@ -13,4 +13,4 @@
 = button_to "Add A Menu Item", new_restaurant_item_path(@restaurant), :method => "get", class: "button"
 %ul
   - @restaurant.items.each do |item|
-    %li= "#{item.name} #{item.price}"
+    %li= "#{item.name} -- #{number_to_currency(item.price)}"
