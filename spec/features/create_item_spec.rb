@@ -28,6 +28,7 @@ feature "Add A Menu Item" do
     fill_in "Name", with: "Cheeseburger"
     fill_in "Price", with: 9.85
     fill_in "Description", with: "Half pound of juicy goodness"
+    fill_in "Ingredients", with: "Bun, Cheese, Mayo, Lettuce, Tomato"
     click_button "Add Menu Item"
     page.should have_content "Cheeseburger added"
     page.should have_content "Burger Shack"
@@ -60,6 +61,7 @@ feature "Add A Menu Item" do
     fill_in "Name", with: "Cheeseburger"
     fill_in "Price", with: -9.85
     fill_in "Description", with: "Half pound of goodness"
+    fill_in "Ingredients", with: "Bun, Cheese, Mayo, Lettuce, Tomato"
     click_button "Add Menu Item"
     page.should have_content "Cheeseburger couldn't be added"
   end

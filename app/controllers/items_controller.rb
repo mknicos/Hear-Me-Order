@@ -15,11 +15,10 @@ class ItemsController < ApplicationController
       flash[:alert] = "#{@item[:name]} couldn't be added"
       render :new
     end
-
   end
 
   def item_params
-    params.require(:item).permit(:name, :price, :description, :restaurant_id)
+    params.require(:item).permit(:name, :price, :description, :restaurant_id, :ingredients)
   end
 
 end

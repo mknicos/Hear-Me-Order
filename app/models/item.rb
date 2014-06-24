@@ -1,14 +1,5 @@
 class Item < ActiveRecord::Base
   belongs_to :restaurant
-  #This belongs to restaurant gives me
-  #restaurant
-  #restaurant=
-  #build_restaurant
-  #create_restaurant
-  #create_restaurant!
-  
-
-  #has_many_ingredients
   #has_many_questions
 
   validates :name,
@@ -21,5 +12,10 @@ class Item < ActiveRecord::Base
 
   validates_numericality_of :price, greater_than: 0,
     message: "The price must be a number greater than 0"
+
+  validates :ingredients,
+    presence: true,
+    format: { with: /\A[a-zA-Z\s\,]+\z/,
+      message: "Please enter only letters or spaces, ingredients seperated by commas"}
 
 end
