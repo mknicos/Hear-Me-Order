@@ -1,9 +1,8 @@
-%h1 Add A Restaurant or Join An Existing One
-=link_to "Add A Restaurant", new_restaurant_path
-
-%h2 Select Restaurant To Join
+%h2.sign-in-heading Select Restaurant To Join
 .row
-  #employee_join_form
+  #employee-join-form
     = simple_form_for(:employee, {url: "join",method: :put}) do |f|
       = collection_select(:employee, :restaurant_id, Restaurant.all, :id, :name)
-      = f.button :submit, "Join Restaurant"
+      .button-wrap
+        = f.button :submit, "Join Restaurant", class: "submit-button"
+      =link_to "Add A Restaurant", new_restaurant_path

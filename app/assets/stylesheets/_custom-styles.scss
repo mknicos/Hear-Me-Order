@@ -1,3 +1,17 @@
+$faded_red: rgba(167,72,72, .8);
+$faded_blue: rgba(93,177,190,.9);
+$faded_green: rgba(178,224,155,.8);
+
+body{
+  font-family: 'Inconsolata';
+  background-image: url('grey_wash_wall.png');
+  background-repeat: repeat;
+}
+
+h2{
+  font-family: 'Inconsolata';
+}
+
 #register_form {
   @extend .small-10;
   @extend .small-centered;
@@ -5,10 +19,64 @@
   @extend .medium-4;
   @extend .medium-centered;
   @extend .columns;
+
+  background: #DBDBDB;
+  margin-top: 7%;
+  padding-bottom: 10px;
+  box-shadow: 0px 0px 10px 2px #272727;
+
+  .button-wrap{
+    text-align: center;
+  }
+}
+
+
+.sign-in-heading{
+  background: #DBDBDB;
+  text-align: center;
+  box-shadow: 0px 2px 10px 4px #272727;
+
+  @extend .small-10;
+  @extend .small-centered;
+  @extend .columns;
+  @extend .medium-6;
+  @extend .medium-centered;
+  @extend .columns;
+  margin-top: 2%;
+
+}
+
+#sign-in-form {
+  background: #DBDBDB;
+  @extend .small-10;
+  @extend .small-centered;
+  @extend .columns;
+  @extend .medium-4;
+  @extend .medium-centered;
+  @extend .columns;
+
+  margin-top: 7%;
+  padding-bottom: 10px;
+  box-shadow: 0px 0px 10px 2px #272727;
+
+  .button-wrap{
+    text-align: center;
+  }
+}
+
+#employee-join-form{
+  @extend #sign-in-form;
+  padding-top: 10px;
 }
 
 .btn {
   @extend .button;
+}
+
+.submit-button{
+  background: $faded_green;
+  color: #272727;
+  box-shadow: 0px 0px 4px 3px #272727;
 }
 
 #map-canvas {

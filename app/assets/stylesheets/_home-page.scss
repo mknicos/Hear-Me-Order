@@ -15,12 +15,16 @@ $faded_green: rgba(178,224,155,.8);
   .rest-link{
     background: $faded_blue !important;
   }
+
+  .collapsed-menu{
+    background: $faded_red !important;
+  }
 }
 
 #home_container{
   width: 100%;
   height: 100%;
-  background-image: url('Diner1.jpg');
+  background-image: url('DinerUltra.jpg');
   background-size: cover;
 
   #title_wrapper{
@@ -30,7 +34,7 @@ $faded_green: rgba(178,224,155,.8);
   }
 
   h1{
-    color: rgba(93,177,190,.9);
+    color: rgba(93,177,190, .95);
     margin-top: 0px;
     font-family: 'Cutive Mono';
     height: 50%;
