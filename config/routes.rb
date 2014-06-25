@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   devise_for :employees, :controllers => { :registrations => "registrations" }
   get '/employees/create_or_join', to: 'employees#create_or_join'
+  put '/employees/join', to: 'employees#join'
 
   devise_for :users
   root to: "home#index"

@@ -30,7 +30,6 @@ class RestaurantsController < ApplicationController
     else
       redirect_to root_path, alert: "You must sign in to view that page"
     end
-
   end
 
   private

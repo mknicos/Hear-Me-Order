@@ -13,6 +13,22 @@ feature "Employee signs up" do
     page.should have_content "Welcome to Hear Me Order!"
   end
 
+  scenario "successfully join an existing restaurant" do
+    Restaurant.create(name: "Shake Shack", phone: "1112223333", address: "1234 Main Street")
+    visit '/'
+    click_link "Register As Employee"
+    fill_in "Email", with: "matt@example.com"
+    fill_in "First name", with: "matt"
+    fill_in "Last name", with: "smith"
+    fill_in "Password", with: "password"
+    fill_in "Password confirmation", with: "password"
+    click_button "Sign up"
+    page.should have_content "Welcome to Hear Me Order!"
+    select "Shake Shack", from: 'employee_restaurant_id'
+    click_button "Join Restaurant"
+    page.should have_content "Your Restaurant"
+  end
+
   scenario "failed signup because duplicate email" do
     Employee.create(email: "matt@example.com", password: "password", password_confirmation: "password", first_name: "matt", last_name: "smith")
     visit '/'
