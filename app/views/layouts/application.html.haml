@@ -8,6 +8,34 @@
     = javascript_include_tag "vendor/modernizr"
     = csrf_meta_tags
   %body
+    %nav.top-bar{"data-topbar" => "", "data-options" => "is_hover: false" }
+      %ul.title-area
+        %li.name
+          %h1
+            %a{href: root_path} Home
+      %section.top-bar-section
+        %ul.right
+          %li.active
+            - if current_user
+              %a{href: restaurants_path, class: "rest-link"} Restaurants
+            - if current_employee && current_employee.restaurant
+              %a{href: restaurant_path(current_employee.restaurant), class: "rest-link"} My Restaurant
+          %li.has-dropdown
+            - if current_user || current_employee
+              %a{href: '#'} Account
+              %ul.dropdown
+                %li
+                  - if current_employee
+                    = link_to 'Sign Out', destroy_employee_session_path, :method => :delete
+                  - if current_user
+                    = link_to 'Sign Out', destroy_user_session_path, :method => :delete
+            - else
+              %a{href: '#'} Sign In
+              %ul.dropdown
+                %li
+                  =link_to "User Sign In", new_user_session_path
+                %li
+                  =link_to "Employee Sign In", new_employee_session_path
     -if alert
       .alert.alert-box= alert
     -if notice

@@ -3,7 +3,8 @@ require 'spec_helper'
 feature "Add A Restaurant" do
   scenario "happy path" do
     visit '/'
-    click_link "Register As Employee"
+    click_link "Employee Sign In"
+    click_link "Sign up"
     fill_in "Email", with: "matt@example.com"
     fill_in "First name", with: "matt"
     fill_in "Last name", with: "smith"
@@ -24,7 +25,8 @@ feature "Add A Restaurant" do
     Restaurant.create(name: "Shake Shack", phone: "1112223333", address: "1234 Main Street")
     visit restaurants_path
     visit '/'
-    click_link "Register As Employee"
+    click_link "Employee Sign In"
+    click_link "Sign up"
     fill_in "Email", with: "matt@example.com"
     fill_in "First name", with: "foo"
     fill_in "Last name", with: "Bar"

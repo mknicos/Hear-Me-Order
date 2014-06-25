@@ -17,3 +17,8 @@
 
 $(function(){ $(document).foundation(); });
 $(document).ready(initialize);
+
+function initialize(){
+  hideAlertBox();
+  initializeGoogleMap();
+}

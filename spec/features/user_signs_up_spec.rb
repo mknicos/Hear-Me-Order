@@ -3,7 +3,8 @@ require 'spec_helper'
 feature "User signs up" do
   scenario "happy path" do
     visit '/'
-    click_link "Register"
+    click_link "User Sign In"
+    click_link "Sign up"
     fill_in "Email", with: "matt@example.com"
     fill_in "First name", with: "matt"
     fill_in "Last name", with: "smith"
@@ -23,7 +24,8 @@ feature "User signs up" do
   scenario "failed signup because duplicate email" do
     User.create(email: "matt@example.com", password: "password", password_confirmation: "password", first_name: "matt", last_name: "smith")
     visit '/'
-    click_link "Register"
+    click_link "User Sign In"
+    click_link "Sign up"
     fill_in "Email", with: "matt@example.com"
     fill_in "First name", with: "foo"
     fill_in "Last name", with: "Bar"
@@ -38,7 +40,8 @@ feature "User signs up" do
   scenario "failed signup because password does not match confirm password" do
     User.create(email: "matt@example.com", password: "password", password_confirmation: "password", first_name: "matt", last_name: "smith")
     visit '/'
-    click_link "Register"
+    click_link "User Sign In"
+    click_link "Sign up"
     fill_in "Email", with: "bob@example.com"
     fill_in "First name", with: "foo"
     fill_in "Last name", with: "Bar"

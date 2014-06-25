@@ -1,14 +1,4 @@
-%h1 Hear's My Order
-%ul
-  %li= link_to "Home", root_path
-  - if current_user
-    %li=link_to "Sign Out", destroy_user_session_path, method: :delete
-    %li=link_to "Restaurants", restaurants_path
-  - elsif current_employee
-    %li=link_to "Sign Out", destroy_employee_session_path, method: :delete
-    %li=link_to "Your Restaurant", restaurant_path(current_employee.restaurant)
-  - else current_user || current_employee
-    %li=link_to "Register", new_user_registration_path
-    %li=link_to "User Sign In", new_user_session_path
-    %li=link_to "Register As Employee", new_employee_registration_path
-    %li=link_to "Employee Sign In", new_employee_session_path
+#home_container
+  #title_wrapper
+    %h1 Hear's My Order
+    %h3 Finally An Easier Way To Communicate

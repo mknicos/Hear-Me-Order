@@ -4,7 +4,7 @@ var lng = -86.7833;
 var initialZoom = 11;
 var markers = [];
 
-function initialize(){
+function initializeGoogleMap(){
   initMap(lat, lng, initialZoom);
   getRestaurantLocations();
   getLocation();

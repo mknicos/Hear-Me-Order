@@ -3,7 +3,8 @@ require 'spec_helper'
 feature "Add A Menu Item" do
   scenario "happy path" do
     visit '/'
-    click_link "Register As Employee"
+    click_link "Employee Sign In"
+    click_link "Sign up"
     fill_in "Email", with: "matt@example.com"
     fill_in "First name", with: "matt"
     fill_in "Last name", with: "smith"
@@ -36,7 +37,8 @@ feature "Add A Menu Item" do
 
   scenario "Item not created due to invalid item entered" do
     visit '/'
-    click_link "Register As Employee"
+    click_link "Employee Sign In"
+    click_link "Sign up"
     fill_in "Email", with: "matt@example.com"
     fill_in "First name", with: "matt"
     fill_in "Last name", with: "smith"
