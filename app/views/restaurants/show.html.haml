@@ -9,7 +9,8 @@
       %li= "#{employee[:last_name]}, #{employee[:first_name]}"
 
 %h2 Menu
-= button_to "Add A Menu Item", new_restaurant_item_path(@restaurant), :method => "get", class: "button"
+- if current_employee
+  = button_to "Add A Menu Item", new_restaurant_item_path(@restaurant), :method => "get", class: "button"
 %ul
   - @restaurant.items.each do |item|
     %li= "#{item.name} -- #{number_to_currency(item.price)}"

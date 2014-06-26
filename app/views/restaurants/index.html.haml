@@ -1,4 +1,6 @@
-#map-canvas
+#map-wrapper
+  %h1.sign-in-heading Find A Restaurant
+  #map-canvas
 %ul.restaurants
   - @restaurants.each do |restaurant|
     %li.restaurant{data: {latitude: restaurant.latitude, longitude: restaurant.longitude, name: restaurant.name, id: restaurant.id}}
