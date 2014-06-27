@@ -1,6 +1,10 @@
 #map-wrapper
   %h1.sign-in-heading Find A Restaurant
   #map-canvas
+  %noscript
+    :css
+      #map-canvas {display:none;}
+      #map-wrapper {height: 100px;}
 .row
   %ul.restaurants-listing
     - @restaurants.each do |restaurant|
