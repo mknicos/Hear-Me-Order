@@ -1,5 +1,3 @@
-
-
 $("#map-canvas").ready(initializeGoogleMap);
 
 var map;

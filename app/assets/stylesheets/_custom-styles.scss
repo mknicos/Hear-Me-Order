@@ -113,7 +113,6 @@ h2{
   @extend .medium-6;
   @extend .small-10;
   @extend .large-4;
-  @extend .xlarge-3;
   @extend .columns;
   list-style: none;
   margin-bottom: 40px;
@@ -134,4 +133,57 @@ h2{
     list-style: none;
     color: white;
   }
+}
+
+
+.rest-address {
+  color: white;
+  border-bottom: 1px solid $faded_blue;
+}
+
+#show-wrap {
+  @extend .small-9;
+  @extend .small-centered;
+  @extend .medium-6;
+  @extend .medium-centered;
+  @extend .columns;
+  @extend .large-4;
+  @extend .large-centered;
+  @extend .columns;
+}
+
+#menu-title-wrap{
+  width: 60%;
+  @media only screen and (max-width: 500px){
+    width: 85%;
+  }
+  margin: auto;
+  margin-top: 20px;
+  background: $faded_red;
+  text-align: center;
+}
+
+
+.one-item{
+  @extend .medium-6;
+  @extend .small-10;
+  @extend .large-3;
+  @extend .columns;
+  list-style: none;
+  margin-bottom: 40px;
+  margin-top: 10px;
+}
+
+.item-desc-wrap{
+  background: $faded_blue;
+  width: 90%;
+  height: 100px;
+  text-align: center;
+  overflow: auto;
+}
+
+.item-name{
+  font-size: 1.5em;
+  color:white;
+  list-style: none;
 }
