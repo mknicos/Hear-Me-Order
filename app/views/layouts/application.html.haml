@@ -44,3 +44,18 @@
       .notice.alert-box.info= notice
     = yield
     = javascript_include_tag "application"
+    %noscript
+      - if current_user
+        %a{href: restaurants_path, class: "rest-link"} Restaurants
+      - if current_employee && current_employee.restaurant
+        %a{href: restaurant_path(current_employee.restaurant), class: "rest-link"} My Restaurant
+      - if current_user || current_employee
+        - if current_employee
+          = link_to 'Sign Out', destroy_employee_session_path, :method => :delete
+        - if current_user
+          = link_to 'Sign Out', destroy_user_session_path, :method => :delete
+      - else
+        %li
+          =link_to "User Sign In", new_user_session_path
+        %li
+          =link_to "Employee Sign In", new_employee_session_path
