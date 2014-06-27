@@ -187,3 +187,27 @@ h2{
   color:white;
   list-style: none;
 }
+
+#order-start, #order-stop{
+  background: $faded_green;
+  color: black;
+}
+
+#order-clear {
+  background: $faded-red;
+}
+
+#order-text {
+  width: 400px;
+  height: 200px;
+  margin: auto;
+  margin-bottom: 50px;
+  font-size: 20px;
+}
+
+#sound-button-wrap{
+  width: 400px;
+  @extend.small-4;
+  @extend.small-centered;
+  @extend.columns;
+}
