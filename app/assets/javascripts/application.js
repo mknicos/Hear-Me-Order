@@ -13,12 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require jquery-readyselector
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
-$(document).ready(initialize);
-
-function initialize(){
-  hideAlertBox();
-  initializeGoogleMap();
-}

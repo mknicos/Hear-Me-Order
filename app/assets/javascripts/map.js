@@ -1,3 +1,7 @@
+
+
+$("#map-canvas").ready(initializeGoogleMap);
+
 var map;
 var lat = 36.1667;
 var lng = -86.7833;
@@ -17,10 +21,6 @@ function getRestaurantLocations(){
             lng: $(e).data('longitude'),
             id: $(e).data('id')};
   });
-  console.log(rest_markers);
-  //addMarker(markers[0]);
-  //addMarker(markers[1]);
-  //addMarker(markers[2]);
 
   for(i = 0; i < rest_markers.length; i++){
     addMarker(rest_markers[i]);

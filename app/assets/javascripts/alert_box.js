@@ -1,4 +1,7 @@
 
+$(document).ready(hideAlertBox);
+
+
 function hideAlertBox(){
   setTimeout(removeAlert, 3000);
 }
