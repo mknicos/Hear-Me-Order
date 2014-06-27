@@ -1,4 +1,4 @@
-%h2 Add an Item
+%h2.sign-in-heading Add an Item
 .row
   #register_form
     = simple_form_for [@restaurant, @item] do |f|
@@ -7,4 +7,5 @@
       = f.input :description
       = f.input :ingredients
       = f.hidden_field :restaurant_id, value: @restaurant.id
-      = f.button :submit, "Add Menu Item"
+      .button-wrap
+        = f.button :submit, "Add Menu Item"

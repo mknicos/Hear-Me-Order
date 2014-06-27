@@ -5,16 +5,18 @@
     %h3.rest-address= @restaurant.address
     %h3.rest-address= number_to_phone(@restaurant.phone)
     = image_tag @restaurant.static_map_url
-
-- if current_employee
-  %ul
-    - @restaurant.employees.each do |employee|
-      %li= "#{employee[:last_name]}, #{employee[:first_name]}"
+#employee-name-wrap
+  - if current_employee
+    %h3 Current Employees
+    %ul
+      - @restaurant.employees.each do |employee|
+        %li= "#{employee[:last_name]}, #{employee[:first_name]}"
 .row
   #menu-title-wrap
     %h2 Menu
 - if current_employee
-  = button_to "Add A Menu Item", new_restaurant_item_path(@restaurant), :method => "get", class: "button"
+  .button-wrap
+    =link_to "Add A Menu Item", new_restaurant_item_path(@restaurant), :method => "get", class: "button add-menu"
 .row
   - @restaurant.items.each do |item|
     .one-item
