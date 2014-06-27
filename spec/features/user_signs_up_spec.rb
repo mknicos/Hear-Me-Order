@@ -33,7 +33,7 @@ feature "User signs up" do
     fill_in "Password confirmation", with: "password"
     click_button "Sign up"
     page.should_not have_content "Welcome"
-    page.should have_content "Your account could not be created."
+    page.should have_content "Email has already been taken"
     page.should have_error("has already been taken", on: "Email")
   end
 
@@ -50,7 +50,7 @@ feature "User signs up" do
     click_button "Sign up"
 
     page.should_not have_content "Welcome"
-    page.should have_content "Your account could not be created."
+    page.should have_content "Password confirmation doesn't match Password"
     page.should have_error("doesn't match", on: "Password")
   end
 end

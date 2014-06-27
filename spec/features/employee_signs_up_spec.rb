@@ -43,7 +43,7 @@ feature "Employee signs up" do
     fill_in "Password confirmation", with: "password"
     click_button "Sign up"
     page.should_not have_content "Welcome"
-    page.should have_content "Your account could not be created."
+    page.should have_content "Email has already been taken"
     page.should have_error("has already been taken", on: "Email")
   end
 
@@ -52,15 +52,14 @@ feature "Employee signs up" do
     visit '/'
     click_link "Employee Sign In"
     click_link "Sign up"
-    fill_in "Email", with: "@example.com"
+    fill_in "Email", with: "bob@example.com"
     fill_in "First name", with: "foo"
     fill_in "Last name", with: "Bar"
     fill_in "Password", with: "password"
-    fill_in "Password confirmation", with: "password"
+    fill_in "Password confirmation", with: "mypassword"
     # PR 1: Captchas
     click_button "Sign up"
     page.should_not have_content "Welcome"
-    page.should have_content "Your account could not be created."
-    page.should have_error("is invalid", on: "Password")
+    page.should have_content "Password confirmation doesn't match Password"
   end
 end
